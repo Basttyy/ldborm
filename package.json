@@ -1,0 +1,28 @@
+{
+  "name": "ldb-orm",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/ldb-orm.umd.cjs",
+  "module": "./dist/ldb-orm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/ldb-orm.js",
+      "require": "./dist/ldb-orm.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev-docs": "vite",
+    "build-docs": "tsc && vite build",
+    "build": "tsc --p ./tsconfig-lib.json && vite -c ./vite.config.lib.ts build",
+    "preview-docs": "yarn run docs:build vite preview",
+    "prepublishOnly": "yarn run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.1"
+  }
+}
